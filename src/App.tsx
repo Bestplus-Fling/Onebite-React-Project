@@ -1,8 +1,30 @@
+import { Outlet, Route, Routes } from "react-router";
 import "./App.css";
+import IndexPage from "./pages/index-page";
+import SignInPage from "./pages/sign-in-page";
+import SignUpPage from "./pages/sign-up-page";
+import CounterPage from "./pages/counter-page";
+
+function AuthLayout() {
+  return (
+    <div>
+      <header>Auth!</header>
+      {/* 중복 Route에서 Outlet 위치에 컴포넌트가 랜더링된다. */}
+      <Outlet />
+    </div>
+  );
+}
 
 function App() {
   return (
-    <div className="bg-black text-2xl font-bold underline">Hello World</div>
+    <Routes>
+      <Route path="/" element={<IndexPage />} />
+      <Route path="/counter" element={<CounterPage />}></Route>
+      <Route element={<AuthLayout />}>
+        <Route path="/sign-in" element={<SignInPage />} />
+        <Route path="/sign-up" element={<SignUpPage />} />
+      </Route>
+    </Routes>
   );
 }
 
