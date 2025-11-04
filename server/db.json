@@ -6,38 +6,8 @@
       "isDone": true
     },
     {
-      "id": "2",
-      "content": "Todo 2",
-      "isDone": true
-    },
-    {
-      "id": "3",
-      "content": "Todo 3",
-      "isDone": false
-    },
-    {
-      "id": "f94f",
+      "id": "7a78",
       "content": "123",
-      "isDone": false
-    },
-    {
-      "id": "ac1a",
-      "content": "234",
-      "isDone": false
-    },
-    {
-      "id": "9aa9",
-      "content": "345",
-      "isDone": false
-    },
-    {
-      "id": "f1a7",
-      "content": "견과류 먹기",
-      "isDone": false
-    },
-    {
-      "id": "a1e5",
-      "content": "물먹기",
       "isDone": false
     }
   ]
