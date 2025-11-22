@@ -1,12 +1,22 @@
 import { createPostWithImages } from "@/api/post";
+import { QUERY_KEYS } from "@/lib/constants";
 import type { useMutationCallback } from "@/types";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 export function useCreatePost(callbacks?: useMutationCallback) {
+  const queryClinet = useQueryClient();
+
   return useMutation({
     mutationFn: createPostWithImages,
     onSuccess: () => {
       if (callbacks?.onSuccess) callbacks.onSuccess();
+
+      // 1. 캐시 아예 초기화
+      queryClinet.resetQueries({
+        queryKey: QUERY_KEYS.post.list,
+      });
+      // 2. 캐시 데이터에 완성된 데이터만 추가
+      // 3. 낙관적 업데이트 방식(onMutate)
     },
     onError: (error) => {
       if (callbacks?.onError) callbacks.onError(error);
