@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useOpenEditPostModal } from "@/store/post-editer-modal";
+import { useOpenEditPostModal } from "@/store/post-editor-modal";
 
 import type { PostEntity } from "@/types";
 

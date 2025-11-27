@@ -8,7 +8,7 @@ import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { useCreatePost } from "@/hooks/mutations/post/use-create-post";
 import { useUpdatePost } from "@/hooks/mutations/post/use-update-post";
 import { useOpenAlertModal } from "@/store/alert-modal";
-import { usePostEditorModal } from "@/store/post-editer-modal";
+import { usePostEditorModal } from "@/store/post-editor-modal";
 import { useSession } from "@/store/session";
 import { ImageIcon, XIcon } from "lucide-react";
 import { useEffect, useRef, useState, type ChangeEvent } from "react";
